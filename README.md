@@ -40,5 +40,5 @@ sudo rfcomm bind 0 aa:bb:cc:dd:ee:ff
 following and example to log voltages:
 
 ```sh
-docker logs -n 1 -f um34c | while read line; do echo "$(echo $line | jq -r .voltage)V"; done
+docker logs -n 1 -f um34c | while read line; do echo "$(echo $line | jq -r .voltage)V $(echo $line | jq -r .current)A"; done
 ```
